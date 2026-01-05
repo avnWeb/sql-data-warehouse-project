@@ -119,12 +119,12 @@ BEGIN
 		PRINT '>> Load Duration: '+ CAST(DATEDIFF(SECOND, @start_time, @end_time) AS NVARCHAR) + ' seconds';
 		PRINT '------------------';
 
-		PRINT '>> Truncating Table: bronze.px_cat_g1v2';
-		TRUNCATE TABLE bronze.px_cat_g1v2;
+		PRINT '>> Truncating Table: bronze.erp_px_cat_g1v2';
+		TRUNCATE TABLE bronze.erp_px_cat_g1v2;
 
 		SET @start_time = GETDATE();
-		PRINT '>> Inserting Data Into: bronze.px_cat_g1v2';
-		BULK INSERT bronze.px_cat_g1v2
+		PRINT '>> Inserting Data Into: bronze.erp_px_cat_g1v2';
+		BULK INSERT bronze.erp_px_cat_g1v2
 		FROM 'D:\sql\dwh_project\source_erp\PX_CAT_G1V2.csv'
 		WITH(
 			FIRSTROW = 2,
